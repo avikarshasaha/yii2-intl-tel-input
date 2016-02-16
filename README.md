@@ -28,4 +28,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \avikarsha\intltelinput\AutoloadExample::widget(); ?>```
+<?= \avikarsha\intltelinput\IntlTelInput::widget(); ?>
+
+<?= $form->field($model_user, 'attribute')
+                            ->widget(IntlTelInput::className(), []) ?>```
