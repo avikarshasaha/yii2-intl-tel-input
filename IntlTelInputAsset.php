@@ -5,7 +5,7 @@ class IntlTelInputAsset extends AssetBundle {
 	public $sourcePath = '@bower/intl-tel-input'; 
 
     public $css = [
-    	"build/css/intlTelInput.css",
+    	// "build/css/intlTelInput.css",
     ];
 
     public $js = [
