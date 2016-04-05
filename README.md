@@ -32,3 +32,6 @@ Once the extension is installed, simply use it in your code by  :
 
 <?= $form->field($model_user, 'attribute')
                             ->widget(IntlTelInput::className(), []) ?>```
+							
+							
+Client side validation added.

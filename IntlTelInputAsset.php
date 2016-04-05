@@ -9,7 +9,7 @@ class IntlTelInputAsset extends AssetBundle {
     ];
 
     public $js = [
-        "lib/libphonenumber/build/utils.js",
+        "build/js/utils.js",
     	"build/js/intlTelInput.js"
     ];
 
