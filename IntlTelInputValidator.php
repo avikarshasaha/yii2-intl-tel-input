@@ -20,13 +20,7 @@ class IntlTelInputValidator extends Validator
      */
     protected function validateValue($value)
     {
-        $value = $model->$attribute;
-
-        if (!is_string($value)) {
-            $this->addError($model, $attribute, $this->message);
-
-            return;
-        }
+        return;
     }
     
     /**

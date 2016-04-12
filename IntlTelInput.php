@@ -47,10 +47,18 @@ class IntlTelInput extends InputWidget
         IntlTelInputAsset::register($view);
 
         $id = $this->options['id'];
-        $options = $this->clientOptions !== false && !empty($this->clientOptions)
+
+        $jsOptions = $this->clientOptions !== false && !empty($this->clientOptions)
             ? Json::encode($this->clientOptions)
             : '';
-        $js = "jQuery('#$id').intlTelInput($options);";
+
+        $js = "jQuery('#$id').intlTelInput($jsOptions);";
+        $value = isset($this->options['value']) ? $this->options['value'] : Html::getAttributeValue($this->model, $this->attribute);
+        $isd =  isset($this->options['isd']) ? $this->options['isd'] : '';
+        if($value && $isd) {
+            $js .= "jQuery('#$id').intlTelInput('setNumber','+ $isd $value');";
+        }
+        
         $view->registerJs($js);
     }
 }
