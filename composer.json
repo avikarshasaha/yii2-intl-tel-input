@@ -12,7 +12,8 @@
     ],
     "require": {
         "yiisoft/yii2":"*",
-        "bower-asset/intl-tel-input":"*"        
+        "bower-asset/intl-tel-input":"*",
+        "giggsey/libphonenumber-for-php": "^7"        
     },
     "autoload": {
         "psr-4": {
