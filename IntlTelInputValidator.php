@@ -25,7 +25,8 @@ class IntlTelInputValidator extends Validator
         $phoneUtil = PhoneNumberUtil::getInstance();
         try {
             $phoneProto = $phoneUtil->parse($value, null);
-            if ($this->region !== null) {
+            // pe($phoneProto);
+            if (!empty($this->region) && $this->region !== null) {
                 if (is_array($this->region)) {
                     foreach ($this->region as $region) {
                         if ($phoneUtil->isValidNumberForRegion($phoneProto, $region)) {
@@ -44,6 +45,7 @@ class IntlTelInputValidator extends Validator
                 }
             }
         } catch (NumberParseException $e) {
+            var_dump($e);
         }
         return $valid ? null : [$this->message, []];
 
@@ -65,6 +67,8 @@ class IntlTelInputValidator extends Validator
         if($.trim(telInput.val())){
             if(!telInput.intlTelInput("isValidNumber")){
                 messages.push(options.message);
+            } else {
+                telInput.intlTelInput("setNumber", telInput.val());
             }
         }
 JS;
