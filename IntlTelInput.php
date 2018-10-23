@@ -59,6 +59,6 @@ class IntlTelInput extends InputWidget
             $js .= "jQuery('#$id').intlTelInput('setNumber','+ $isd $value');";
         }
         
-        $view->registerJs($js);
+        $view->registerJs($js, \yii\web\View::POS_LOAD);
     }
 }
